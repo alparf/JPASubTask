@@ -9,5 +9,6 @@ public class Runner {
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         EntityManager entityManager = sessionFactory.createEntityManager();
+        entityManager.close();
     }
 }
