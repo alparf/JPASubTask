@@ -12,11 +12,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "persons")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(name = "fio", nullable = false)
     private String fio;
